@@ -1,10 +1,13 @@
 const mongoose = require("mongoose");
 const connectToMongoose = () => {
   mongoose
-    .connect("mongodb://localhost:27017/cliffex", {
-      useNewUrlParser: true,
-      useUnifiedTopology: true,
-    })
+    .connect(
+      "mongodb+srv://justnest:12345@cluster0.to5ohc7.mongodb.net/cliffex",
+      {
+        useNewUrlParser: true,
+        useUnifiedTopology: true,
+      }
+    )
     .then(() => {
       console.log("connected to mongo");
     })

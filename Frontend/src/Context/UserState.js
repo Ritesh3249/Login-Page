@@ -26,7 +26,8 @@ const UserState = (props) => {
         });
       })
       .catch((data) => {
-        toast.warning(data.response.data[0].msg, {
+        console.log(data);
+        toast.warning(data.response.data, {
           position: "top-center",
           autoClose: 1000,
           hideProgressBar: false,
@@ -59,15 +60,28 @@ const UserState = (props) => {
         return data;
       })
       .catch((data) => {
-        toast.warning(data.response.data.error[0].msg, {
-          position: "top-center",
-          autoClose: 1000,
-          hideProgressBar: false,
-          closeOnClick: true,
-          pauseOnHover: true,
-          draggable: true,
-          progress: undefined,
-        });
+        console.log(data);
+        if (data.response.data.error == "User already exists with this email") {
+          toast.warning(data.response.data.error, {
+            position: "top-center",
+            autoClose: 1000,
+            hideProgressBar: false,
+            closeOnClick: true,
+            pauseOnHover: true,
+            draggable: true,
+            progress: undefined,
+          });
+        } else {
+          toast.warning(data.response.data.error[0].msg, {
+            position: "top-center",
+            autoClose: 1000,
+            hideProgressBar: false,
+            closeOnClick: true,
+            pauseOnHover: true,
+            draggable: true,
+            progress: undefined,
+          });
+        }
       });
   };
   const updateUser = (data, id) => {

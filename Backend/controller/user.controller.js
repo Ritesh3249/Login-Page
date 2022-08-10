@@ -13,7 +13,9 @@ module.exports = {
     try {
       let user = await User.findOne({ email: req.body.email });
       if (user) {
-        return res.status(400).send("User already exists with this email");
+        return res
+          .status(400)
+          .json({ error: "User already exists with this email" });
       }
       //Incripting password
       const salt = await bcrypt.genSalt(10);

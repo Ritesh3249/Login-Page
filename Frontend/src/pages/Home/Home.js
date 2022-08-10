@@ -16,7 +16,6 @@ const Home = () => {
   const getData = async () => {
     const res = await getAllUser();
     res && setUser(res);
-    // console.log(res);
   };
   const [id, setId] = useState("");
   const editModal = (id) => {
@@ -33,7 +32,6 @@ const Home = () => {
     getData();
   }, [user]);
   useEffect(() => {
-    console.log(cookie.get("auth"));
     setCookieData(cookie.get("auth"));
   }, []);
   return (

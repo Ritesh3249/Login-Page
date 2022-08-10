@@ -16,8 +16,7 @@ const Register = () => {
     password: "",
   });
   const [confirmPassword, setConfirmPassword] = useState("");
-  console.log(confirmPassword);
-  console.log(user);
+
   const onChange = (e) => {
     setUser((perk) => {
       return { ...perk, [e.target.name]: e.target.value };
@@ -30,7 +29,6 @@ const Register = () => {
     } else {
       if (user.password === confirmPassword) {
         const res = await createUser(user);
-        console.log(res);
       } else {
         toast.warning("please check the password", {
           position: "top-center",
@@ -46,7 +44,6 @@ const Register = () => {
   };
 
   const validate = (values) => {
-    console.log(values);
     const errors = {};
     const regex = /^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/i;
     if (!values.name) {
@@ -66,7 +63,7 @@ const Register = () => {
       errors.password = "Password is required";
     }
     setSubmit(true);
-    console.log(errors);
+
     return errors;
   };
   return (

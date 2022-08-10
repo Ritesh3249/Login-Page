@@ -26,7 +26,6 @@ const UserState = (props) => {
         });
       })
       .catch((data) => {
-        console.log(data);
         toast.warning(data.response.data, {
           position: "top-center",
           autoClose: 1000,
@@ -60,7 +59,7 @@ const UserState = (props) => {
         return data;
       })
       .catch((data) => {
-        console.log(data);
+        
         if (data.response.data.error == "User already exists with this email") {
           toast.warning(data.response.data.error, {
             position: "top-center",

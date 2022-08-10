@@ -5,7 +5,7 @@ import "./editModal.css";
 const EditModal = ({ id }) => {
   const context = useContext(UserContext);
   const { setShowModal, updateUser, showModal } = context;
-  console.log(id);
+
   const [user, setUser] = useState({
     name: "",
     email: "",
@@ -14,7 +14,7 @@ const EditModal = ({ id }) => {
   });
 
   const [confirmPassword, setConfirmPassword] = useState("");
-  console.log(user);
+
   const onChange = (e) => {
     setUser((perk) => {
       return { ...perk, [e.target.name]: e.target.value };
@@ -24,9 +24,8 @@ const EditModal = ({ id }) => {
   const onSubmit = async () => {
     if (user.password === confirmPassword) {
       const res = await updateUser(user, id);
-      console.log(res);
+
       setShowModal(false);
-      console.log(res);
     } else {
       alert("please check the password");
     }

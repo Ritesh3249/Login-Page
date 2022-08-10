@@ -1,0 +1,31 @@
+body {
+  background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)),
+    url("./asstes/images/background.jpg");
+  background-repeat: no-repeat;
+  background-position: center center;
+  background-size: cover;
+  height: 100vh;
+}
+
+.main-body-heading {
+  font-size: 2.5rem;
+  color: aliceblue;
+  text-align: center;
+  margin-top: 2rem;
+}
+
+.login-register-button {
+  border: none;
+  background: rgb(49, 97, 110);
+  padding: 1rem 2rem;
+  font-size: 1rem;
+  font-weight: bold;
+  cursor: pointer;
+  transition: 0.3s all ease;
+  color: white;
+}
+
+.login-register-button:hover {
+  background: white;
+  color: rgb(49, 97, 110);
+}
